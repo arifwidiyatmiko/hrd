@@ -1,0 +1,33 @@
+body { font-family:'Open Sans', sans-serif; color:#fff; background-color:#000; }
+
+.outter { top:0; right:0; bottom:0; left:0; }
+.outter > div { padding:0; }
+
+.branding-container { padding:4px 2px 4px 0; }
+.branding-container .loading { margin:-50px 0 0 -50px; top:50%; left:50%; }
+
+.social-feed-list, .social-feed-item { margin:0; padding:0; list-style:none; }
+.social-feed-list { padding:2px 0 2px 2px; }
+.social-feed-item { height:33.3333%; padding:2px 0; }
+.social-feed-container { padding-bottom:15px; }
+.social-feed-photo { width:100px; top:15px; left:15px; }
+.social-feed-user { padding-left:135px; font-size:20px; }
+.social-feed-content { padding:0 15px 15px 130px; font-size:24px; }
+.social-feed-content a { color:#fff; }
+.social-feed-content s { text-decoration:none; }
+.social-feed-content-img {}
+.social-feed-content-txt {}
+.social-feed-icon { bottom:15px; left:15px; }
+
+.social-feed-twitter .social-feed-container { background-color:#55acee; }
+.social-feed-twitter .social-feed-content {}
+.social-feed-twitter .social-feed-content-img {}
+.social-feed-twitter .social-feed-content-txt {}
+
+.social-feed-facebook .social-feed-container { background-color:#3b5998; }
+.social-feed-facebook .social-feed-content-img {}
+.social-feed-facebook .social-feed-content-txt {}
+
+.social-feed-instagram .social-feed-container { background-color:#3f729b; }
+.social-feed-instagram .social-feed-content-img {}
+.social-feed-instagram .social-feed-content-txt {}

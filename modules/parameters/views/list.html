@@ -1,0 +1,233 @@
+<div class="app-content-inner">
+	<div class="p-v-sm p-h bg-white box-shadow pos-rlt clearfix">
+		<a class="btn btn-link text-lg pull-left visible-xs" ng-init="toggle=false" ng-click="toggle=!toggle" ng-class="{'active':toggle}"><i class="fa fa-fw" ng-class="{'fa-close':toggle, 'fa-bars':!toggle}"></i></a>
+		<h3 class="no-margin pull-left">{{pageTitle}}</h3>
+		<div class="pull-right">
+			<script id="dropdown-save" type="text/ng-template">
+				<ul class="dropdown-menu">
+					<li><a href><i class="fa fa-fw fa-file-pdf-o"></i> Save as PDF File</a></li>
+					<li><a href><i class="fa fa-fw fa-file-word-o"></i> Save as Word Files</a></li>
+					<li><a href><i class="fa fa-fw fa-file-excel-o"></i> Save as Excel Files</a></li>
+				</ul>
+			</script>
+			<ul class="nav nav-sm nav-pills">
+				<li><a ui-sref="app.employee.add" title="New"><i class="fa fa-fw fa-file-o"></i></a></li>
+				<li class="dropdown dropdown-save">
+					<a title="Save" data-template="dropdown-save" data-animation="am-fade-and-slide-top" bs-dropdown="dropdown-save"><i class="fa fa-save text-lg"></i> <span class="caret"></span></a>
+				</li>
+				<li><a href title="Print"><i class="fa fa-print text-lg"></i></a></li>
+				<li>
+					<a href title="Info"
+						bs-aside="aside"
+						data-template="modules/employee/views/info.html"
+						data-placement="right"
+						data-animation="am-slide-right aside-open-inner modal-open"
+						data-container="body"
+					>
+						<i class="fa fa-info text-lg"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="content-container l1 w-full h-full pos-abt" ng-class="{'active':toggle}">
+		<div class="h-full pos-rlt">
+
+			<div class="content-left h-full pos-abt">
+				<div class="h-full bg-light b-r pos-rlt">
+					<div class="p-h b-b pos-rlt">
+						<ul class="nav nav-lines b-info" ui-nav>
+							<li class="active"><a href ng-init="tab1=true" ng-click="tab1=true;tab2=false">Card Details</a></li>
+							<li><a href ng-init="tab2=false" ng-click="tab1=false;tab2=true">Activity</a></li>
+						</ul>
+					</div>
+
+					<div class="w-full h-full pos-abt cs">
+
+						<!-- left content tab #1 -->
+						<div class="h-full scrollable hover" ng-show='tab1'>
+							<!-- left content section -->
+							<div class="p b-b">
+								<!-- left content section starts here -->
+								<div class="panel panel-default" style="margin-bottom:0;">
+									<div class="panel-heading bg-white">Basic form</div>
+									<div class="panel-body">
+										<form role="form" class="ng-pristine ng-valid">
+											<div class="form-group">
+												<label for="exampleInputEmail1">Email address</label>
+												<input type="email" placeholder="Enter email" id="exampleInputEmail1" class="form-control">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputPassword1">Password</label>
+												<input type="password" placeholder="Password" id="exampleInputPassword1" class="form-control">
+											</div>
+											<div class="checkbox">
+												<label>
+													<input type="checkbox">
+													Check me out
+												</label>
+											</div>
+											<button class="btn btn-default m-b" type="submit">Submit</button>
+										</form>
+									</div>
+								</div>
+								<!-- left content section ends here -->
+							</div>
+
+							<!-- left content section -->
+							<div class="p b-b">
+								<!-- left content section starts here -->
+								<div class="panel panel-default" style="margin-bottom:0;">
+									<div class="panel-heading bg-white">Colors</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div style="width:60%" class="progress-bar progress-bar-primary">60%</div>
+										</div>
+										<div class="progress">
+											<div style="width:40%" class="progress-bar progress-bar-success">40%</div>
+										</div>
+										<div class="progress">
+											<div style="width:30%" class="progress-bar progress-bar-warning">30%</div>
+										</div>
+										<div class="progress">
+											<div style="width:20%" class="progress-bar progress-bar-danger">20%</div>
+										</div>
+									</div>
+								</div>
+								<!-- left content section ends here -->
+							</div>
+						</div>
+
+						<!-- left content tab #2 -->
+						<div class="h-full scrollable hover" ng-show='tab2'>
+							<!-- left content section -->
+							<div class="p b-b">
+								<!-- left content section starts here -->
+								<div class="panel panel-default" style="margin-bottom:0;">
+									<div class="panel-heading bg-white">Column sizing</div>
+									<div class="panel-body">
+										<div class="row row-sm">
+											<div class="col-xs-3">
+												<input type="text" placeholder=".col-xs-3" class="form-control">
+											</div>
+											<div class="col-xs-4">
+												<input type="text" placeholder=".col-xs-4" class="form-control">
+											</div>
+											<div class="col-xs-5">
+												<input type="text" placeholder=".col-xs-5" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- left content section ends here -->
+							</div>
+
+							<!-- left content section -->
+							<div class="p b-b">
+								<!-- left content section starts here -->
+								<div class="panel b-default" style="margin-bottom:0;">
+									<div class="panel-heading"><span class="pull-right">30%</span> Comments</div>
+									<div class="progress progress-xxs no-margin no-radius dk">
+										<div style="width:30%" class="progress-bar bg-primary lt"></div>
+									</div>
+									<div class="panel-body p-v-md">
+										<div class="pull-left pull-none-sm p-h text-center m-r m-v-xs"> <i class="glyphicon glyphicon-comment text-4x text-muted"></i> </div>
+										<div class="clear">
+											<div class="text-2x font-bold text-black">67,000</div>
+											<small class="text-dk">Some text here</small>
+										</div>
+									</div>
+								</div>
+								<!-- left content section ends here -->
+							</div>
+
+							<!-- left content section -->
+							<div class="p b-b">
+								<!-- left content section starts here -->
+								<div class="list-group" style="margin-bottom:0;">
+									<a class="list-group-item" href="">
+										<span class="pull-right badge bg-info">12</span>
+										Consectetur elit
+									</a>
+									<a class="list-group-item" href="">
+										<span class="pull-right label bg-success">5</span>
+										Lorem ipsum dolor
+									</a>
+									<a class="list-group-item" href="">
+										<span class="pull-right text-muted m-l-xs"><i class="glyphicon glyphicon-chevron-right"></i></span>
+										<span class="pull-right label bg-primary">4</span>
+										Ullamcorper solli
+									</a>
+									<a class="list-group-item" href="">
+										<span class="pull-right badge bg-danger">9</span>
+										Aliquam sodales nisi
+									</a>
+									<a class="list-group-item" href="">
+										<span class="pull-right badge bg-warning">10</span>
+										Mauris at
+									</a>
+								</div>
+							<!-- left content section ends here -->
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="content-main h-full pos-abt">
+				<!-- right content starts here -->
+
+				<div class="table-fixed-container h-full">
+					<div class="table-fixed h-full pos-rlt">
+						<div class="table-fixed-head b-b pos-abt"></div>
+						<div class="table-fixed-body h-full scroll-y">
+							<table class="table table-hover no-margin bg-white">
+								<thead>
+									<tr>
+										<th>
+											<div class="m-l-n p-h pos-abt"><a href>First Name <i class="fa fa-sort"></i></a></div>
+										</th>
+										<th>
+											<div class="m-l-n p-h pos-abt"><a href>Last Name <i class="fa fa-caret-down"></i></a></div>
+										</th>
+										<th>
+											<div class="m-l-n p-h pos-abt"><a href>Gender <i class="fa fa-caret-up"></i></a></div>
+										</th>
+										<th>
+											<div class="m-l-n p-h pos-abt"><a href>Birth Date <i class="fa fa-caret-up"></i></a></div>
+										</th>										
+										<th>
+											<div class="m-l-n p-h pos-abt">Phone</div>
+										</th>
+										<th>
+											<div class="m-l-n p-h pos-abt">Email</div>
+										</th>
+										<th>
+											<div class="m-l-n p-h pos-abt">&nbsp;</div>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="row in rowCollectionBasic">
+										<td>{{row.firstName}}</td>
+										<td>{{row.lastName}}</td>
+										<td>{{row.genderLONG}}</td>
+										<td>{{row.birthDate | date}}</td>
+										<td>{{row.phone1}}</td>
+										<td><a ng-href="mailto:{{row.email1}}">{{row.email1}}</a></td>
+										<td><a href="{{viewUrl}}/{{row.id}}" title="View {{row.firstName + ' ' + row.lastName}}"><i class="fa fa-folder-open text-lg"></i></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- right content ends here -->
+			</div>
+
+		</div>
+	</div>
+</div>

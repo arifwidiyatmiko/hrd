@@ -1,0 +1,195 @@
+<div class="app-content-inner">
+	<div class="p-v-sm p-h bg-white box-shadow pos-rlt clearfix">
+		<a class="btn btn-link text-lg pull-left visible-xs" ng-init="toggle=false" ng-click="toggle=!toggle" ng-class="{'active':toggle}"><i class="fa fa-fw" ng-class="{'fa-close':toggle, 'fa-bars':!toggle}"></i></a>
+		<h3 class="no-margin pull-left">{{pageTitle}}</h3>
+		<div class="pull-right">
+			<ul class="nav nav-sm nav-pills">
+				<li><a ng-click="DeleteOnClick(data[0].idEmployee)" title="Delete"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
+				<li><a ui-sref="app.employee.edit({itemId: data[0].idEmployee})" title="Edit"><i class="glyphicon glyphicon-edit"></i> Edit</a></li>
+				<li><a ui-sref="app.employee.list" title="List"><i class="glyphicon glyphicon-list"></i> List</a></li>
+			</ul>
+		</div>	
+	</div>
+	
+	<div class="p-md">
+		<div class="p bg-white">
+			<div class="gmailtab-container">
+				<ul class="gmailtab-nav no-margin list-unstyled pos-rlt clearfix" ui-nav>
+					<li class="active">
+						<a class="gmailtab-primary p-h" ng-init="tabActive = 1" ng-click="tabActive = 1">
+							<i class="fa fa-user m-l-n p"></i>
+							<div><h5 class="no-margin">Personal Info</h5></div>
+						</a>
+					</li>
+					<li>
+						<a class="gmailtab-info p-h" ng-click="tabActive = 2">
+							<i class="fa fa-graduation-cap m-l-n p"></i>
+							<div><h5 class="no-margin">Education</h5></div>
+						</a>
+					</li>
+					<li>
+						<a class="gmailtab-info p-h" ng-click="tabActive = 3">
+							<i class="fa fa-suitcase m-l-n p"></i>
+							<div><h5 class="no-margin">Work Experience</h5></div>
+						</a>
+					</li>
+					<li>
+						<a class="gmailtab-info p-h" ng-click="tabActive = 4">
+							<i class="fa fa-tags m-l-n p"></i>
+							<div><h5 class="no-margin">Notes</h5></div>
+						</a>
+					</li>				
+					<li>
+						<a class="gmailtab-info p-h" ng-click="tabActive = 5">
+							<i class="fa fa-credit-card m-l-n p"></i>
+							<div><h5 class="no-margin">Address | Bank | ID Card</h5></div>
+						</a>
+					</li>
+				</ul>
+	
+				<div class="gmailtab-content">
+					<div class="gmailtab-pane" ng-show="tabActive == 1">
+						<form class="form-horizontal">
+						<div class="row">
+							<div class="col-xs-6 col-sm-4">
+								<div class="form-group">
+									<label class="col-lg-3 control-label">ID</label>
+									<div class="col-lg-9">
+										<p ng-if="data[0].idEmployee != null" class="form-control-static">{{data[0].idEmployee}}</p>
+										<p ng-if="data[0].idEmployee == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">First Name</label>
+									<div class="col-lg-9">
+										<p ng-if="data[0].firstName != null" class="form-control-static">{{data[0].firstName}}</p>
+										<p ng-if="data[0].firstName == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Last Name</label>
+									<div class="col-lg-9">
+										<p ng-if="data[0].lastName != null" class="form-control-static">{{data[0].lastName}}</p>
+										<p ng-if="data[0].lastName == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Gender</label>
+									<div class="col-lg-9">
+										<p ng-if="data[0].gender != null" class="form-control-static">{{data[0].gender}}</p>
+										<p ng-if="data[0].gender == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Birth Place</label>
+									<div class="col-lg-9">
+										<p ng-if="data[0].birthPlace != null" class="form-control-static">{{data[0].birthPlace}}</p>
+										<p ng-if="data[0].birthPlace == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Birth Date</label>
+									<div class="col-lg-9">
+										<p class="form-control-static">{{data[0].birthDate | date}}</p>
+										<p ng-if="data[0].birthPlace == null" class="form-control-static">-</p>
+
+									</div>
+								</div>								
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Religion</label>
+									<div class="col-lg-9">
+										<p ng-if="data[0].religion != null" class="form-control-static">{{data[0].religion}}</p>
+										<p ng-if="data[0].religion == null" class="form-control-static">-</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-7 col-sm-5">
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Marital</label>
+									<div class="col-lg-8">
+										<p ng-if="data[0].marital != null" class="form-control-static">{{data[0].martial}}</p>
+										<p ng-if="data[0].marital == null" class="form-control-static">-</p>
+									</div>
+								</div>								
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Citizenship</label>
+									<div class="col-lg-8">
+										<p ng-if="data[0].citizenship != null" class="form-control-static">{{data[0].citizenship}}</p>
+										<p ng-if="data[0].citizenship == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Personal Email</label>
+									<div class="col-lg-8">
+										<p ng-if="data[0].personalEmail != null" class="form-control-static">{{data[0].personalEmail}}</p>
+										<p ng-if="data[0].personalEmail == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Corporate Email</label>
+									<div class="col-lg-8">
+										<p ng-if="data[0].companyEmail != null" class="form-control-static">{{data[0].companyEmail}}</p>
+										<p ng-if="data[0].companyEmail == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Telephone</label>
+									<div class="col-lg-8">
+										<p ng-if="data[0].telephoneNumber != null" class="form-control-static">{{data[0].telephoneNumber}}</p>
+										<p ng-if="data[0].telephoneNumber == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Mobile</label>
+									<div class="col-lg-8">
+										<p ng-if="data[0].mobileNumber != null" class="form-control-static">{{data[0].mobileNumber}}</p>
+										<p ng-if="data[0].mobileNumber == null" class="form-control-static">-</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Status</label>
+									<div class="col-lg-8">
+										<p class="form-control-static">Work Status</p>
+									</div>
+								</div>																																																
+							</div>
+							<!-- Optional: clear the XS cols if their content doesn't match in height -->
+							<div class="clearfix visible-xs-block"></div>
+							<div class="col-xs-5 col-sm-3">
+								<div class="form-group">
+									<label class="col-lg-4 control-label">Status</label>
+									<div class="col-lg-8">
+										<p class="form-control-static">Work Status</p>
+									</div>
+								</div>								
+							</div>
+						 </div>
+						 </form>						
+					</div>
+	
+					<div class="gmailtab-pane" ng-show="tabActive == 2">
+						<h3>Tab 2</h3>
+						<p>Suspendisse porttitor justo non erat commodo pulvinar. Praesent sollicitudin tristique urna, ut tempor dolor pulvinar dignissim. Quisque nec massa et neque hendrerit dignissim quis ut nisi. Mauris feugiat diam quis risus pretium vehicula. Sed tellus elit, dictum ut bibendum non, hendrerit a neque. Praesent gravida, odio sit amet pellentesque congue, metus ipsum fermentum odio, sit amet dignissim est dui eleifend quam. Donec rhoncus venenatis sagittis. Nunc vulputate augue tristique nibh ultricies non malesuada lacus lacinia. Vivamus sit amet varius lacus. Suspendisse massa nulla, accumsan a blandit vitae, hendrerit et justo. Aliquam erat volutpat. Nulla in dui turpis, a vestibulum mi. Ut ut erat at lacus volutpat pharetra vitae quis lectus. Nam vitae est at mi interdum aliquet et non purus. Cras facilisis commodo lacus, eget ornare nulla imperdiet vitae. Vivamus ac elit mi. Etiam eget metus nisi.</p>
+						<p>Mauris cursus justo non urna mattis adipiscing. Sed tincidunt nibh a erat vehicula cursus. Pellentesque non accumsan enim. Vivamus id nisl in est fermentum mollis in ac ligula. Proin quis risus sed elit fermentum sollicitudin sed eget diam. Suspendisse potenti. Suspendisse congue augue at justo interdum vitae viverra nisi ultricies. Donec venenatis accumsan convallis. Vivamus eu urna orci. Aliquam ut mauris sem. Nulla volutpat auctor mauris vitae tincidunt. Proin eget lectus mauris. In ac vehicula enim. Suspendisse potenti. Mauris quis massa massa, non vulputate nisi. Nunc elementum, neque vitae placerat convallis, velit nunc cursus lectus, vel varius nibh dolor non neque. Ut placerat, nisl eu tincidunt suscipit, erat odio pulvinar orci, vel pharetra orci sem ut ipsum.</p>
+					</div>
+	
+					<div class="gmailtab-pane" ng-show="tabActive == 3">
+						<h3>Tab 3</h3>
+						<p>Mauris cursus justo non urna mattis adipiscing. Sed tincidunt nibh a erat vehicula cursus. Pellentesque non accumsan enim. Vivamus id nisl in est fermentum mollis in ac ligula. Proin quis risus sed elit fermentum sollicitudin sed eget diam. Suspendisse potenti. Suspendisse congue augue at justo interdum vitae viverra nisi ultricies. Donec venenatis accumsan convallis. Vivamus eu urna orci. Aliquam ut mauris sem. Nulla volutpat auctor mauris vitae tincidunt. Proin eget lectus mauris. In ac vehicula enim. Suspendisse potenti. Mauris quis massa massa, non vulputate nisi. Nunc elementum, neque vitae placerat convallis, velit nunc cursus lectus, vel varius nibh dolor non neque. Ut placerat, nisl eu tincidunt suscipit, erat odio pulvinar orci, vel pharetra orci sem ut ipsum.</p>
+						<p>Donec sagittis elit a neque faucibus vehicula. Quisque nunc nunc, blandit eu dictum non, mollis eu lorem. Nunc non turpis sed magna rutrum sodales. Maecenas lacinia urna ut dolor lacinia vehicula. Mauris quis eros sapien, sit amet placerat nisl. Suspendisse arcu dui, eleifend sit amet sollicitudin sed, interdum vitae leo. Nunc et ante eros, eget tristique orci. Integer pellentesque laoreet bibendum. Aenean sodales fermentum odio id gravida. Fusce in odio nec justo fringilla feugiat. Integer ut eros erat. Pellentesque rhoncus dui nulla, ut pellentesque quam. Etiam nunc massa, suscipit vel ornare sit amet, suscipit in tellus. Vestibulum fermentum, libero ut convallis interdum, est ante facilisis magna, vel rutrum nunc erat ac massa. Praesent vel dolor ut orci posuere convallis at eu leo. Cras eget interdum ante. Phasellus non suscipit mauris. Fusce quis turpis at arcu rutrum condimentum sollicitudin nec mi.</p>
+					</div>
+					<div class="gmailtab-pane" ng-show="tabActive == 4">
+						<h3>Tab 4</h3>
+						<p>Donec sagittis elit a neque faucibus vehicula. Quisque nunc nunc, blandit eu dictum non, mollis eu lorem. Nunc non turpis sed magna rutrum sodales. Maecenas lacinia urna ut dolor lacinia vehicula. Mauris quis eros sapien, sit amet placerat nisl. Suspendisse arcu dui, eleifend sit amet sollicitudin sed, interdum vitae leo. Nunc et ante eros, eget tristique orci. Integer pellentesque laoreet bibendum. Aenean sodales fermentum odio id gravida. Fusce in odio nec justo fringilla feugiat. Integer ut eros erat. Pellentesque rhoncus dui nulla, ut pellentesque quam. Etiam nunc massa, suscipit vel ornare sit amet, suscipit in tellus. Vestibulum fermentum, libero ut convallis interdum, est ante facilisis magna, vel rutrum nunc erat ac massa. Praesent vel dolor ut orci posuere convallis at eu leo. Cras eget interdum ante. Phasellus non suscipit mauris. Fusce quis turpis at arcu rutrum condimentum sollicitudin nec mi.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales feugiat augue vel pulvinar. In pellentesque sagittis elit, a consequat dui auctor in. Vivamus tempor tempor nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ligula neque, venenatis vitae dictum eu, interdum auctor diam. Quisque scelerisque dapibus sem id interdum. Nulla pulvinar congue augue non volutpat. Suspendisse convallis libero ut felis viverra ut scelerisque mauris ullamcorper. Donec turpis lectus, consequat et vestibulum aliquet, volutpat at augue. Praesent eu felis sem. Sed et sem mauris, vel cursus nisl. Morbi laoreet massa sed massa sodales adipiscing.</p>
+					</div>
+					<div class="gmailtab-pane" ng-show="tabActive == 5">
+						<h3>Tab 5</h3>
+						<p>Donec sagittis elit a neque faucibus vehicula. Quisque nunc nunc, blandit eu dictum non, mollis eu lorem. Nunc non turpis sed magna rutrum sodales. Maecenas lacinia urna ut dolor lacinia vehicula. Mauris quis eros sapien, sit amet placerat nisl. Suspendisse arcu dui, eleifend sit amet sollicitudin sed, interdum vitae leo. Nunc et ante eros, eget tristique orci. Integer pellentesque laoreet bibendum. Aenean sodales fermentum odio id gravida. Fusce in odio nec justo fringilla feugiat. Integer ut eros erat. Pellentesque rhoncus dui nulla, ut pellentesque quam. Etiam nunc massa, suscipit vel ornare sit amet, suscipit in tellus. Vestibulum fermentum, libero ut convallis interdum, est ante facilisis magna, vel rutrum nunc erat ac massa. Praesent vel dolor ut orci posuere convallis at eu leo. Cras eget interdum ante. Phasellus non suscipit mauris. Fusce quis turpis at arcu rutrum condimentum sollicitudin nec mi.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales feugiat augue vel pulvinar. In pellentesque sagittis elit, a consequat dui auctor in. Vivamus tempor tempor nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ligula neque, venenatis vitae dictum eu, interdum auctor diam. Quisque scelerisque dapibus sem id interdum. Nulla pulvinar congue augue non volutpat. Suspendisse convallis libero ut felis viverra ut scelerisque mauris ullamcorper. Donec turpis lectus, consequat et vestibulum aliquet, volutpat at augue. Praesent eu felis sem. Sed et sem mauris, vel cursus nisl. Morbi laoreet massa sed massa sodales adipiscing.</p>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	

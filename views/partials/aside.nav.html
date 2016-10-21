@@ -1,0 +1,69 @@
+<nav ui-nav>
+  <ul class="nav">
+    <li class="nav-header h4 m-v-sm">
+      UI Kits
+    </li>
+    <li ng-class="{active:$state.includes('ui.component')}">
+      <a ui-sref="app.home">
+        <i class="icon glyphicon glyphicon-dashboard text-lt"></i>
+        <span class="font-normal">Dashboard</span>
+      </a>
+    </li>
+    <li ng-class="{active:$state.includes('app.employee')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-user text-lt"></i>
+        <span class="font-normal">Employee</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="app.employee.list">View / Search</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="app.employee.add">Add new employee</a>
+        </li>
+
+      </ul>
+    </li>    
+    <li ng-class="{active:$state.includes('ui.angular-strap')}">
+      <a>
+        <i class="icon glyphicon glyphicon-calendar text-lt"></i>
+        <span class="font-normal">Attendance</span>
+      </a>
+    </li>
+    <li ng-class="{active:$state.includes('ui.form')}">
+      <a>
+        <i class="icon glyphicon glyphicon-usd text-lt"></i>
+        <span class="font-normal">Payroll</span>
+      </a>
+    </li>
+    <li ng-class="{active:$state.includes('ui.table')}">
+      <a>
+        <i class="icon glyphicon glyphicon-list-alt text-lt"></i>
+        <span class="font-normal">Reports</span>
+      </a>
+    </li>
+    <li ng-class="{active:$state.includes('app.setting')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-wrench text-lt"></i>
+        <span class="font-normal">Setting</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="app.setting.branches">Branches</a>
+        </li>      	
+        <li ui-sref-active="active">
+          <a ui-sref="app.setting.departments">Departments</a>
+        </li>      	
+        <li ui-sref-active="active">
+          <a ui-sref="app.setting.parameters">Parameters</a>
+        </li>
+      </ul>
+    </li>    
+  </ul>
+</nav>

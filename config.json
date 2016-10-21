@@ -1,0 +1,22 @@
+{
+	"result": "success",
+	"data":{
+		"providers":[
+			{
+			  "name": "facebook",
+			  "desc": "Facebook",
+			  "clientId": "164390044260"
+			},
+			{
+			  "name": "google",
+			  "desc": "Google Account",
+			  "clientId": "631036554609-v5hm2amv4pvico3asfi97f54sc51ji4o.apps.googleusercontent.com"
+			},
+			{
+			  "name": "live",
+			  "desc": "Windows Live",
+			  "clientId": "631036554609"
+			}
+		]
+	}
+}
