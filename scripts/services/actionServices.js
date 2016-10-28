@@ -4,7 +4,7 @@
     angular.module('app').factory('actionServices', factory);    
     
     function factory($http, $alert, $location){
-		var apiUrl = 'http://localhost/api/employee';
+		var apiUrl = 'http://localhost/hrdsystem/api';
 		
         function encodeData(data) {
             return Object.keys(data).map(function(key) {

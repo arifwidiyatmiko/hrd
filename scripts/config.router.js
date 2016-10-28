@@ -73,5 +73,95 @@ angular.module('app')
 					templateUrl: 'modules/employee/views/edit.html',
 					controller: 'EmployeeCtrl'
 				})	
+
+			/// Departemen components router
+         	.state('app.departement', {
+           		url: '/departement',
+           		template: '<div ui-view></div>',
+				resolve: {
+					deps: ['$ocLazyLoad', function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+							'vendor/libs/lodash.js',
+							'scripts/services/actionServices.js',
+							'modules/departement/scripts/controllers/DepartementCtrl.js'
+						]);
+					}]
+				}
+         	})
+         		.state('app.departement.list', {
+					url: '/list',
+					templateUrl: 'modules/departement/views/list.html',
+					controller: 'DepartementCtrl'
+				})		
+				.state('app.departement.add', {
+					url: '/add',
+					templateUrl: 'modules/departement/views/add.html',
+					controller: 'DepartementCtrl'
+				})
+				.state('app.departement.edit', {
+					url: '/edit/:itemId',
+					templateUrl: 'modules/departement/views/edit.html',
+					controller: 'DepartementCtrl'
+				})	
+			/// Departemen components router
+         	.state('app.jobtitle', {
+           		url: '/jobtitle',
+           		template: '<div ui-view></div>',
+				resolve: {
+					deps: ['$ocLazyLoad', function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+							'vendor/libs/lodash.js',
+							'scripts/services/actionServices.js',
+							'modules/jobtitle/scripts/controllers/jobtitleCtrl.js'
+						]);
+					}]
+				}
+         	})
+         	.state('app.jobtitle.list', {
+					url: '/list',
+					templateUrl: 'modules/jobtitle/views/list.html',
+					controller: 'jobtitleCtrl'
+				})		
+				.state('app.jobtitle.add', {
+					url: '/add',
+					templateUrl: 'modules/jobtitle/views/add.html',
+					controller: 'jobtitleCtrl'
+				})
+				.state('app.jobtitle.edit', {
+					url: '/edit/:itemId',
+					templateUrl: 'modules/jobtitle/views/edit.html',
+					controller: 'jobtitleCtrl'
+				})	
+			/// Departemen components router
+         	.state('app.allowance', {
+           		url: '/allowance',
+           		template: '<div ui-view></div>',
+				resolve: {
+					deps: ['$ocLazyLoad', function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+							'vendor/libs/lodash.js',
+							'scripts/services/actionServices.js',
+							'modules/allowance/scripts/controllers/allowanceCtrl.js'
+						]);
+					}]
+				}
+         	})
+         	.state('app.allowance.list', {
+					url: '/list',
+					templateUrl: 'modules/allowance/views/list.html',
+					controller: 'allowanceCtrl'
+				})		
+				.state('app.allowance.add', {
+					url: '/add',
+					templateUrl: 'modules/allowance/views/add.html',
+					controller: 'allowanceCtrl'
+				})
+				.state('app.allowance.edit', {
+					url: '/edit/:itemId/:allowanceType',
+					templateUrl: 'modules/allowance/views/edit.html',
+					controller: 'allowanceCtrl'
+				})	
+				
 			}
+
 	]);

@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default m-t-lg">
+				<div class="panel-heading text-center"><h3 class="no-margin">{{pageTitle}}</h3></div>
+				<div class="panel-body">
+					<div lazy-load="ui.select">
+						<form class="form-horizontal" ng-submit="addOnClick()">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Job Title Name</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="jobTitle" placeholder="Job Title">
+								</div>							
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Job Description</label>
+								<div class="col-sm-6">
+									<textarea class="form-control" ng-model="jobDescription"  placeholder="Description"></textarea>
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Job Allowance</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="jobAllowance" placeholder="Job Allowance">
+								</div>								
+							</div>					
+							<div class="form-group no-margin m-b-n p-v text-center b-t">
+								<a class="btn btn-default p-h-lg" ui-sref="app.departement.list">Cancel</a>
+								<button class="btn btn-addon btn-info p-h-lg" type="submit">Save</button>
+							</div>
+						</form>
+					</div><!-- Lazy Load ui.select -->
+				</div>
+			</div>
+		</div>
+	</div><!-- Row -->
+</div><!-- Container -->			
+						

@@ -6,12 +6,12 @@
 				<div class="panel-body">
 					<div lazy-load="ui.select">
 						<form class="form-horizontal" ng-submit="addOnClick()">
-							<!--<div class="form-group">
-								<label class="col-sm-3 control-label">ID</label>
-								<div class="col-sm-3">
-									<input type="text" class="form-control"  placeholder="Employee ID">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Employee Number</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="employeeNumber" placeholder="Employee Number (Id Card)">
 								</div>							
-							</div>-->
+							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">First Name</label>
 								<div class="col-sm-6">
@@ -37,8 +37,10 @@
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Birth Info</label>
-								<div class="col-sm-6">
+								<div class="col-sm-3">
 									<input type="text" class="form-control" ng-model="birthPlace" placeholder="Birth Place">
+								</div>
+								<div class="col-sm-3 input-group">
 		            				<input id="requestedDate" class="form-control" ng-model="birthDate" data-autoclose="1" bs-datepicker type="text">
 		            				<span class="input-group-btn">
 		                				<label class="btn btn-default" for="requestedDate">
@@ -47,8 +49,8 @@
 								</div>								
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">Religion --{{religion.selected}}</label>
-								<div class="col-sm-3">
+								<label class="col-sm-3 control-label">Religion</label>
+								<div class="col-sm-6">
 									<ui-select ng-model="religion.selected" theme="bootstrap">
 										<ui-select-match placeholder="Employee Religion">{{$select.selected.name}}</ui-select-match>
 										<ui-select-choices repeat="item in Religions | filter: $select.search">
@@ -59,7 +61,7 @@
             				</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Marital</label>
-								<div class="col-sm-3">
+								<div class="col-sm-6">
 									<ui-select ng-model="marital.selected"  theme="bootstrap">
 										<ui-select-match placeholder="Employee Marital">{{$select.selected.name}}</ui-select-match>
 										<ui-select-choices repeat="item in Marital | filter: $select.search">
@@ -98,20 +100,83 @@
 								</div>								
 							</div>
 							<div class="form-group">
+								<label class="col-sm-3 control-label">Province</label>
+								<div class="col-sm-6">
+									<ui-select ng-model="province.selected" theme="bootstrap">
+										<ui-select-match placeholder="Province Name">{{$select.selected.name}}</ui-select-match>
+										<ui-select-choices repeat="item in Province | filter: $select.search">
+											<div ng-bind-html="item.name | highlight: $select.search"></div>
+										</ui-select-choices>
+									</ui-select>									
+            					</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">City</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="city" placeholder="City Name">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Street Address</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="streetName" placeholder="Street Address">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Zipcode</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="zipcode" placeholder="Zipcode">
+								</div>								
+							</div>
+							<div class="form-group">
 								<label class="col-sm-3 control-label">Telephone</label>
-								<div class="col-sm-3">
+								<div class="col-sm-6">
 									<input type="text" class="form-control" ng-model="telephoneNumber" placeholder="Telephone">
 								</div>								
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Mobile</label>
-								<div class="col-sm-3">
+								<div class="col-sm-6">
 									<input type="text" class="form-control" ng-model="mobileNumber" placeholder="Mobile">
 								</div>								
 							</div>
 							<div class="form-group">
+								<label class="col-sm-3 control-label">Mother Name</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="motherName" placeholder="Mother Name">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Account Number</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="accountNumber" placeholder="Bank Account Number">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Departement</label>
+								<div class="col-sm-6">
+									<ui-select ng-model="departement.selected" theme="bootstrap">
+										<ui-select-match placeholder="Departement Name">{{$select.selected.departementName}}</ui-select-match>
+										<ui-select-choices repeat="item in Departement | filter: $select.search">
+											<div ng-bind-html="item.departementName | highlight: $select.search"></div>
+										</ui-select-choices>
+									</ui-select>	
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Job Title</label>
+								<div class="col-sm-6">
+									<ui-select ng-model="idJob.selected" theme="bootstrap">
+										<ui-select-match placeholder="Departement Name">{{$select.selected.jobTitle}}</ui-select-match>
+										<ui-select-choices repeat="item in JobTitle | filter: $select.search">
+											<div ng-bind-html="item.jobTitle | highlight: $select.search"></div>
+										</ui-select-choices>
+									</ui-select>	
+								</div>								
+							</div>
+							<div class="form-group">
 								<label class="col-sm-3 control-label">Work Status</label>
-								<div class="col-sm-3">
+								<div class="col-sm-6">
 									<ui-select ng-model="workStatus.selected" theme="bootstrap">
 										<ui-select-match placeholder="Working Status">{{$select.selected.name}}</ui-select-match>
 										<ui-select-choices repeat="item in WorkStatus | filter: $select.search">
@@ -119,7 +184,65 @@
 										</ui-select-choices>
 									</ui-select>									
             					</div>								
-							</div>							
+							</div>	
+							<div class="form-group" ng-show="workStatus.selected.name == 'Tetap' ">
+								<label class="col-sm-3 control-label">Assignment Date</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<input id="requestedDate" class="form-control" ng-model="assignDate" data-autoclose="1" bs-datepicker type="text">
+			            				<span class="input-group-btn">
+			                				<label class="btn btn-default" for="requestedDate">
+			                				<i class="glyphicon glyphicon-calendar"></i></label>
+			            				</span>
+									</div>
+								</div>								
+							</div>
+							<div class="form-group" ng-show="workStatus.selected.name == 'Kontrak' ">
+								<div class="form-horizontal">
+									<label class="col-sm-3 control-label">Assignment Start Date</label>
+								<div class="col-sm-3 ">
+									<div class="input-group">
+										<input id="requestedDate" class="form-control" ng-model="assignStart" data-autoclose="1" bs-datepicker type="text">
+			            				<span class="input-group-btn">
+			                				<label class="btn btn-default" for="requestedDate">
+			                				<i class="glyphicon glyphicon-calendar"></i></label>
+			            				</span>
+									</div>
+								</div>	
+								<label class="col-sm-3 control-label">Assignment Finish Date</label>
+								<div class="col-sm-3 ">
+									<div class="input-group">
+										<input id="requestedDate" class="form-control" ng-model="assignFinish" data-autoclose="1" bs-datepicker type="text">
+			            				<span class="input-group-btn">
+			                				<label class="btn btn-default" for="requestedDate">
+			                				<i class="glyphicon glyphicon-calendar"></i></label>
+			            				</span>
+									</div>
+								</div>
+								</div>								
+							</div>
+							<div class="form-group" ng-show="workStatus.selected.name == 'Resign' ">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Resign Date</label>
+									<div class="col-sm-5 ">
+										<div class="input-group">
+											<input id="requestedDate" class="form-control" ng-model="resignDate" data-autoclose="1" bs-datepicker type="text">
+				            				<span class="input-group-btn">
+				                				<label class="btn btn-default" for="requestedDate">
+				                				<i class="glyphicon glyphicon-calendar"></i></label>
+				            				</span>
+										</div>
+									</div>	
+								</div>
+								<div>
+									<label class="col-sm-3 control-label">Details</label>
+									<div class="col-sm-6">
+										<textarea class="form-control" placeholder="Reason for Resignation" ng-model="detail"></textarea>
+									</div>	
+								</div>							
+							</div>
+
+
 							<div class="form-group no-margin m-b-n p-v text-center b-t">
 								<a class="btn btn-default p-h-lg" ui-sref="app.employee.list">Cancel</a>
 								<button class="btn btn-addon btn-info p-h-lg" type="submit">Save</button>

@@ -1,0 +1,78 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default m-t-lg">
+				<div class="panel-heading text-center"><h3 class="no-margin">{{pageTitle}}</h3></div>
+				<div class="panel-body">
+					<div lazy-load="ui.select">
+						<form class="form-horizontal" ng-submit="addOnClick()">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Allowance Type</label>
+								<div class="col-sm-6">
+									<div class="radio pull-left m-r">
+										<label class="ui-checks"><input type="radio" name="a" ng-value="'Lembur'" ng-model="allowanceType"><i></i> Overtime</label>
+									</div>
+									<div class="radio pull-left">
+										<label class="ui-checks"><input type="radio" name="a" ng-value="'Bonus'" ng-model="allowanceType"><i></i> Bonus</label>
+									</div>
+								</div>							
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Employee Name</label>
+								<div class="col-sm-6">
+									<ui-select ng-model="employee.selected" theme="bootstrap">
+										<ui-select-match placeholder="Employee Name">{{$select.selected.firstName}}</ui-select-match>
+										<ui-select-choices repeat="item in Employee | filter: $select.search">
+											<div ng-bind-html="item.firstName | highlight: $select.search"></div>
+										</ui-select-choices>
+									</ui-select>
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Date</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<input id="requestedDate" class="form-control" ng-model="date" data-autoclose="1" bs-datepicker type="text">
+			            				<span class="input-group-btn">
+			                				<label class="btn btn-default" for="requestedDate">
+			                				<i class="glyphicon glyphicon-calendar"></i></label>
+			            				</span>
+									</div>
+								</div>								
+							</div>	
+							<div class="form-group" ng-show="allowanceType == 'Lembur'">
+								<label class="col-sm-3 control-label">Total Hour</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" ng-model="hour" placeholder="Overtime Hour">
+								</div>								
+							</div>	
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Ammount</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<input type="text" class="form-control" ng-model="amount" placeholder="Amount Allowance">
+									<span class="input-group-btn">
+		                				<label class="btn btn-default" for="requestedDate">
+		                				IDR</label>
+		            				</span>
+									</div>
+								</div>								
+							</div>			
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Details</label>
+								<div class="col-sm-6">
+									<textarea class="form-control" ng-model="note"></textarea>
+								</div>								
+							</div>			
+							<div class="form-group no-margin m-b-n p-v text-center b-t">
+								<a class="btn btn-default p-h-lg" ui-sref="app.allowance.list">Cancel</a>
+								<button class="btn btn-addon btn-info p-h-lg" type="submit">Save</button>
+							</div>
+						</form>
+					</div><!-- Lazy Load ui.select -->
+				</div>
+			</div>
+		</div>
+	</div><!-- Row -->
+</div><!-- Container -->			
+						

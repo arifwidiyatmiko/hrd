@@ -1,0 +1,92 @@
+<div class="app-content-inner">
+   <div class="p-v-sm p-h bg-white box-shadow pos-rlt clearfix">
+      <a class="btn btn-link text-lg pull-left visible-xs" ng-init="toggle=false" ng-click="toggle=!toggle" ng-class="{'active':toggle}"><i class="fa fa-fw" ng-class="{'fa-close':toggle, 'fa-bars':!toggle}"></i></a>
+      <h3 class="no-margin pull-left">Allowance {{tabView.active}} List</h3>
+      <div class="pull-right"> 
+         <script id="dropdown-save" type="text/ng-template">
+            <ul class="dropdown-menu">
+               <li><a href><i class="fa fa-fw fa-file-pdf-o"></i>Save as PDF File</a></li>
+               <li><a href><i class="fa fa-fw fa-file-word-o"></i>Save as Word Files</a></li>
+               <li><a href><i class="fa fa-fw fa-file-excel-o"></i>Save as Excel Files</a></li>
+            </ul>
+         </script>
+         <ul class="nav nav-sm nav-pills">
+            <li><a ui-sref="app.allowance.add" title="New"><i class="fa fa-fw fa-file-o"></i></a></li>
+            <li class="dropdown dropdown-save"> <a title="Save" data-template="dropdown-save" data-animation="am-fade-and-slide-top" bs-dropdown="dropdown-save"><i class="fa fa-save text-lg"></i><span class="caret"></span></a> </li>
+            <li><a href title="Print"><i class="fa fa-print text-lg"></i></a></li>
+            <li><a href title="Info" bs-aside="aside" data-template="modules/employee/views/info.html" data-placement="right" data-animation="am-slide-right aside-open-inner modal-open" data-container="body"><i class="fa fa-info text-lg"></i></a></li>
+         </ul>
+      </div>
+   </div>
+   <div class="content-container l1 w-full h-full pos-abt">
+      <div class="h-full pos-rlt">
+         <div class="content-left h-full pos-abt">
+         </div>
+         <div class="content-main h-full pos-abt">
+            <div class="p-h bg-white b-b b-light">
+               <ul class="nav nav-lines nav-md b-info">
+                  <li ng-class="{active: tabView.active == 'Lembur'}"><a href ng-click="viewTabLembur()">Overtime</a></li>
+                 <li ng-class="{active: tabView.active == 'Bonus'}"><a href ng-click="viewTabBonus()">Bonus</a></li>
+               </ul>
+             </div>
+             <!-- Lembur -->
+            <div class="table-fixed-container h-full" >
+            <div class="table-fixed h-full pos-rlt">
+                  <div class="table-fixed-head b-b pos-abt"></div>
+                  <div class="table-fixed-body h-full scroll-y">
+               <table class="table table-hover no-margin bg-white" ng-if="tabView.active == 'Lembur'">
+                  <thead>
+                     <tr>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Employee Name<i class="fa fa-sort"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Date <i class="fa fa-caret-down"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Overtime Hour <i class="fa fa-caret-down"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Amount <i class="fa fa-caret-down"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Details <i class="fa fa-caret-down"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt">Action</div></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-repeat="row in Lembur">
+                        <td>{{row.firstName}} {{row.lastName}}</td>
+                        <td>{{row.date}}</td>
+                        <td>{{row.hour}} Hour</td>
+                        <td>{{row.amount}} IDR</td>
+                        <td>{{row.note}}</td>
+                        <td>
+                           <a href="{{detailUrl}}/{{row.idLembur}}/{{tabView.active}}" title="View {{row.firstName + ' ' + row.lastName}}"><i class="fa fa-pencil-square-o text-lg"></i></a>
+                           <a ng-click="DeleteOnClick(tabView.active,row.idLembur)" title="View {{row.firstName + ' ' + row.lastName}}"><i class="fa fa-trash text-lg"></i></a>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <!-- Bonus -->
+               <table class="table table-hover no-margin bg-white" ng-if="tabView.active == 'Bonus'">
+                  <thead>
+                     <tr>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Employee Name<i class="fa fa-sort"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Date <i class="fa fa-caret-down"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Amount <i class="fa fa-caret-down"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt"><a href>Bonus Detail <i class="fa fa-caret-down"></i></a></div></th>
+                        <th><div class="m-l-n p-h pos-abt">Action</div></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-repeat="row in Bonus">
+                        <td>{{row.firstName}} {{row.lastName}}</td>
+                        <td>{{row.date}}</td>
+                        <td>{{row.amount}} IDR</td>
+                        <td>{{row.note}}</td>
+                        <td>
+                           <a href="{{detailUrl}}/{{row.idBonus}}/{{tabView.active}}" title="View {{row.firstName + ' ' + row.lastName}}"><i class="fa fa-pencil-square-o text-lg"></i></a>
+                           <a ng-click="DeleteOnClick(tabView.active,row.idBonus)" title="View {{row.firstName + ' ' + row.lastName}}"><i class="fa fa-trash text-lg"></i></a>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               </div>
+            </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

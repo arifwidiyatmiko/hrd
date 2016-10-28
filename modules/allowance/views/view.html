@@ -149,10 +149,8 @@
 								<div class="form-group">
 									<label class="col-lg-4 control-label"><strong>Status</strong></label>
 									<div class="col-lg-8">
+										<p ng-if="data.workStatus != null" class="form-control-static">{{data.workStatus}}</p>
 										<p ng-if="data.workStatus == null" class="form-control-static">-</p>
-										<p ng-if="data.workStatus == 'Tetap'" class="form-control-static">{{data.workStatus}}. Assigned Date {{data.assignDate}}</p>
-										<p ng-if="data.workStatus == 'Kontrak'" class="form-control-static">{{data.workStatus}}. Assigned Date {{data.assignStart}} Until {{data.assignFinish}}</p>
-										<p ng-if="data.workStatus == 'Resign'" class="form-control-static">{{data.workStatus}}. Resign Date {{data.assignDate}}</p>
 									</div>
 								</div>																																																
 							</div>

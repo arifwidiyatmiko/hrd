@@ -33,11 +33,19 @@
         <span class="font-normal">Attendance</span>
       </a>
     </li>
-    <li ng-class="{active:$state.includes('ui.form')}">
+    <li ng-class="{active:$state.includes('app.payrol')}">
       <a>
         <i class="icon glyphicon glyphicon-usd text-lt"></i>
         <span class="font-normal">Payroll</span>
       </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="app.allowance.list">Allowance</a>
+        </li>       
+        <li ui-sref-active="active">
+          <a ui-sref="app.deduction.list">Deduction</a>
+        </li>  
+      </ul>
     </li>
     <li ng-class="{active:$state.includes('ui.table')}">
       <a>
@@ -58,8 +66,11 @@
           <a ui-sref="app.setting.branches">Branches</a>
         </li>      	
         <li ui-sref-active="active">
-          <a ui-sref="app.setting.departments">Departments</a>
-        </li>      	
+          <a ui-sref="app.departement.list">Departments</a>
+        </li>  
+        <li ui-sref-active="active">
+          <a ui-sref="app.jobtitle.list">Job Title</a>
+        </li>     	
         <li ui-sref-active="active">
           <a ui-sref="app.setting.parameters">Parameters</a>
         </li>

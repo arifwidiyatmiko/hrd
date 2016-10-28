@@ -1,0 +1,165 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+
+			<div class="panel panel-default m-t-lg">
+				<div class="panel-heading text-center"><h3 class="no-margin">Add New Employee</h3></div>
+				<div class="panel-body">
+					<!--<div lazy-load="ui.select">-->
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">NIK</label>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" placeholder="Employee ID">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">First Name</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" placeholder="First Name">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Last Name</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" placeholder="Last Name">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Gender</label>
+								<div class="col-sm-8">
+									<div class="radio pull-left m-r">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Male</label>
+									</div>
+									<div class="radio pull-left">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Female</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Birth Info</label>
+								<div class="col-sm-8">
+									<div class="col-sm-5">
+										<input type="text" class="form-control" placeholder="Birth Place">
+									</div>
+									<div class="col-sm-3 input-group">
+		            				<input id="requestedDate" class="form-control" ng-model="requestedDate" data-autoclose="1" bs-datepicker type="text">
+		            				<span class="input-group-btn">
+		                				<label class="btn btn-default" for="requestedDate">
+		                				<i class="glyphicon glyphicon-calendar"></i></label>
+		            				</span>
+	            				</div>
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Religion </label>
+								<div class="col-sm-4">
+									<ui-select ng-model="religion.selected" theme="bootstrap">
+										<ui-select-match placeholder="Employee Religion">{{$select.selected.name}}</ui-select-match>
+											<ui-select-choices repeat="item in Religions | filter: $select.search">
+											<div ng-bind-html="item.name | highlight: $select.search"></div>
+										</ui-select-choices>
+									</ui-select>									
+            				</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Marital</label>
+								<div class="col-sm-8">
+									<div class="radio pull-left m-r">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Single</label>
+									</div>
+									<div class="radio pull-left">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Married</label>
+									</div>
+									<div class="radio pull-left">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Divorce</label>
+									</div>									
+								</div>
+							</div>							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Citizenship</label>
+								<div class="col-sm-8">
+									<div class="radio pull-left m-r">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Indonesian</label>
+									</div>
+									<div class="radio pull-left">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Foreign</label>
+									</div>
+								</div>
+							</div>							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Blood Type</label>
+								<div class="col-sm-4">
+									<ui-select ng-model="bloodType.selected" theme="bootstrap">
+										<ui-select-match placeholder="Employee Blood Type">{{$select.selected.name}}</ui-select-match>
+											<ui-select-choices repeat="item in bloodType | filter: $select.search">
+											<div ng-bind-html="item.name | highlight: $select.search"></div>
+										</ui-select-choices>
+									</ui-select>									
+            				</div>								
+							</div>							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Personal Email</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" placeholder="Type your Email">
+								</div>								
+							</div>							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Company Email</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" placeholder="Type your email">
+								</div>								
+							</div>					
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Telephone</label>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" placeholder="Telephone">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Mobile</label>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" placeholder="Mobile">
+								</div>								
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Work Status</label>
+								<div class="col-sm-4">
+									<ui-select ng-model="workStatus.selected" theme="bootstrap">
+										<ui-select-match placeholder="Employee Working Status">{{$select.selected.name}}</ui-select-match>
+											<ui-select-choices repeat="item in workStatus | filter: $select.search">
+											<div ng-bind-html="item.name | highlight: $select.search"></div>
+										</ui-select-choices>
+									</ui-select>									
+            				</div>								
+							</div>							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Status</label>
+								<div class="col-sm-8">
+									<div class="radio pull-left m-r">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Active</label>
+									</div>
+									<div class="radio pull-left">
+										<label class="ui-checks"><input type="radio" name="a"><i></i> Resign</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Photo</label>
+								<div class="col-sm-8">
+									<input type="file" nv-file-select="" uploader="uploader" />
+								</div>
+							</div>
+							
+							<div class="form-group no-margin m-b-n p-v text-center b-t">
+								<a class="btn btn-default p-h-lg" ui-sref="app.employee.list">Cancel</a>
+								<button class="btn btn-addon btn-info p-h-lg" type="submit">Save</button>
+							</div>
+						</form>
+					<!--</div>-->
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
